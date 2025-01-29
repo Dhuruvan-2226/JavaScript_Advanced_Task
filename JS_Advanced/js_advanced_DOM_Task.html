@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Basics Tasks</title>
+    <style>
+        #content {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM Basics Tasks</h1>
+    <!-- Task 1 -->
+    <div id="greeting">Hello!</div>
+    <!-- Task 2 -->
+    <button id="myButton">Click Me!</button>
+    <!-- Task 3 -->
+    <div id="container"></div>
+    <!-- Task 4 -->
+    <button id="toggleButton">Toggle Visibility</button>
+    <div id="content">This content can be toggled.</div>
+    <!-- Task 5 -->
+    <img id="image" src="NewGoku.jpeg" alt="Example Image" width="200">
+    <button id="changeImage">Change Image</button>
+    <script>
+        console.log("DOM Task 1");
+        const element = document.getElementById("greeting");
+        element.textContent = "Hello, World!";
+
+        console.log("DOM Task 2");
+        const button = document.getElementById("myButton");
+        button.addEventListener("click", () => {
+            alert("Button Clicked!");
+        });
+
+        console.log("DOM Task 3");
+        const container = document.getElementById("container");
+        const newElement = document.createElement("p");
+        newElement.textContent = "This is a new paragraph!";
+        container.appendChild(newElement);
+
+        console.log("DOM Task 4");
+        const toggleButton = document.getElementById("toggleButton");
+        const content = document.getElementById("content");
+
+        toggleButton.addEventListener("click", () => {
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        });
+
+        console.log("DOM Task 5");
+        const image = document.getElementById("image");
+        const changeImageButton = document.getElementById("changeImage");
+
+        changeImageButton.addEventListener("click", () => {
+            console.log("Current Src:", image.getAttribute("src"));
+            image.setAttribute("src", "Goku.jpeg");
+            image.setAttribute("alt", "New Example Image");
+        });
+    </script>
+</body>
+</html>
